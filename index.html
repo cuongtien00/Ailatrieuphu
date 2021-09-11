@@ -12,7 +12,9 @@
     <img src="Altp_tvh_ss2.png" height="324" width="600"/>
 </p>
 <p style="text-align:center">
-    <audio src="sound/start.mp3" type="audio/mp3" id="soundStart" ></audio>
+    <audio src="sound/start.mp3"  type="audio/mp3" controls autoplay id="soundStart" >
+<!--        <source src="sound/start.mp3">-->
+    </audio>
 </p>
 <p id="point"></p>
 <p id="bonus"></p>
@@ -74,12 +76,11 @@
         gameManager.help();
         displayQuiz(gameManager.current);
     }
-    window.onload = function()
-    {
-        gameManager.showP();
-        document.getElementById("bonus").innerHTML = "Tiền thưởng:";
+    window.onload = function() {
         let audio = document.getElementById("soundStart");
         audio.play();
+        gameManager.showP();
+        document.getElementById("bonus").innerHTML = "Tiền thưởng:";
     }
     function help2() {
         gameManager.help2();
